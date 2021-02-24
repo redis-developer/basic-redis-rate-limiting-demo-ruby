@@ -1,0 +1,7 @@
+# local example
+PORT: '3000'
+
+REDIS_HOST: '127.0.0.1'
+REDIS_PORT: '6379'
+
+COMPOSE_PROJECT_NAME: 'redis-rate-limiting'

@@ -1,0 +1,5 @@
+{
+  "name": "basic-redis-rate-limiting-demo-ruby",
+  "private": true,
+  "dependencies": {}
+}

@@ -27,9 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
       try {
         requestsSent++;
 
+        let remainingRequests = 10 - requestsSent;
+
         await axios.get(pingUrl, {
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'X-RateLimit-Limit': '10',
+            'X-RateLimit-Remaining': remainingRequests < 0 ? 0 : remainingRequests,
             Pragma: 'no-cache',
             Expires: '0'
           }

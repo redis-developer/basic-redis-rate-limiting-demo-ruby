@@ -36,6 +36,9 @@ gem 'redis', '~> 4.0'
 # keys
 gem 'figaro'
 
+# throttling and filtering requests
+gem 'rack-defense'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

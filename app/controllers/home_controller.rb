@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
-  def index
+  def index; end
+
+  def ping
+    render layout: false
   end
 end

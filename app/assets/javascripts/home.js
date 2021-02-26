@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const limitSelect = document.querySelector('#limit-select');
   const timerDiv = document.querySelector('#timer');
   const resultDiv = document.querySelector('#result');
-  const pingUrl = '/api/ping';
+  const pingUrl = '/ping';
 
   const onSendButtonClick = e => {
     e.preventDefault();
 
-    let counter = 10,
+    let counter = 15,
       requestInterval,
       counterInterval,
       tick = -1,
@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
             Expires: '0'
           }
         });
-
         successfulRequests++;
       } catch (err) {
         blockedRequests++;
@@ -77,16 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
         blockedMessage.innerHTML = `Blocked ${blockedRequests} requests. `;
       }
 
-      if (tick === 100) {
+      let tickCounter = 150;
+
+      if (tick === tickCounter) {
         resetButton.classList.remove('d-none');
         sendButton.disabled = false;
         limitSelect.disabled = false;
         timerDiv.innerHTML = '';
         timerDiv.classList.add('d-none');
         clearInterval(counterInterval);
+        clearInterval(requestInterval);
       }
 
-      if (successfulRequests + blockedRequests === requestsToSend && tick > 100 || tick > 200) {
+      if (successfulRequests + blockedRequests === requestsToSend && tick > tickCounter || tick > 200) {
         clearInterval(requestInterval);
       }
     }, 100);

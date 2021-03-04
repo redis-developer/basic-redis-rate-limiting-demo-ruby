@@ -2,28 +2,62 @@
 
 The server will allow sending max 10 API requests within a 10 second window. If you send more than that, all additional requests will be blocked
 
+![How it works](./public/example.png)
+
 ## How it works
-This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10 sec)
+This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10s). 
+These values can be changed inside `/config/initializers/rack-defense.rb`.
+
+The application will return response headers after each successful request
+
+```sh
+# example
+X-RateLimit-Limit: 10
+X-RateLimit-Remaining: 9
+```
+
+The application will also return request header after each request (including blocking requests) with count of remain requests
+
+```sh
+# example
+RateLimit-Remaining: 1
+```
 
 ## How to run it locally?
 
-#### Run these commands:
+### Prerequisites
+
+- Ruby - v2.7.0
+- Rails - v5.2.4.5
+- PostgreSQL - v10.16
+- NPM - v7.6.0
+
+### Local installation:
+
+#### Run commands:
+
+```sh
+# copy files and set proper data inside
+cp config/application.yml.example config/application.yml
+
+- REDIS_ENDPOINT_URI: Redis server URI
+
+cp config/database.yml.example config/database.yml
+```
 
 ```sh
 bundle install
 rails db:create
 ```
 
-#### Copy `config/database.yml.example` to create `config/database.yml`
-
-#### Copy `config/application.yml.example` to create `config/application.yml`. And provide the values for environment variables
-
-    - REDIS_ENDPOINT_URI: Redis server URI
-
-#### Look `config/application.yml.example` for values examples
-
 #### Run the app
 
 ```sh
 rails s 
+```
+
+#### Go to the browser with this link (localhost example)
+
+```sh
+http://localhost:3000
 ```

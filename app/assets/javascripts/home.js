@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         await axios.get(pingUrl, {
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'X-RateLimit-Limit': '10',
-            'X-RateLimit-Remaining': remainingRequests < 0 ? 0 : remainingRequests,
+            'RateLimit-Remaining': remainingRequests < 0 ? 0 : remainingRequests,
             Pragma: 'no-cache',
             Expires: '0'
           }

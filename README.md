@@ -4,8 +4,18 @@ The server will allow sending max 10 API requests within a 10 second window. If 
 
 ![How it works](./public/example.png)
 
+## Try it out
+
+#### Deploy to Heroku
+
+<p>
+  <a href="" target="_blank">
+      <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heorku" />
+  </a>
+</p>
+
 ## How it works
-This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10s). 
+This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10s).
 These values can be changed inside `/config/initializers/rack-defense.rb`.
 
 The application will return response headers after each successful request
@@ -53,7 +63,7 @@ rails db:create
 #### Run the app
 
 ```sh
-rails s 
+rails s
 ```
 
 #### Go to the browser with this link (localhost example)

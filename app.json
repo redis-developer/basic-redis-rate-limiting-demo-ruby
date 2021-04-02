@@ -1,0 +1,14 @@
+{
+  "name": "Basic Redis Rate Limiting Demo Ruby",
+  "description": "Blocking requests with Redis on Ruby in Rails",
+  "stack": "container",
+  "repository": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby",
+  "logo": "https://redis.io/images/redis-white.png",
+  "keywords": ["ruby", "ruby-on-rails", "redis"],
+  "env": {
+    "REDIS_ENDPOINT_URI": {
+      "description": "Redis server url",
+      "required": true
+    }
+  }
+}

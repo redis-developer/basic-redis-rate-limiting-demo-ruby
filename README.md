@@ -4,16 +4,6 @@ The server will allow sending max 10 API requests within a 10 second window. If 
 
 ![How it works](./public/example.png)
 
-## Try it out
-
-#### Deploy to Heroku
-
-<p>
-  <a href="" target="_blank">
-      <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heorku" />
-  </a>
-</p>
-
 ## How it works
 This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10s).
 These values can be changed inside `/config/initializers/rack-defense.rb`.
@@ -31,6 +21,16 @@ The application will also return request header after each request (including bl
 ```sh
 # example
 RateLimit-Remaining: 1
+```
+
+## Redis and commands
+
+Rack-defense gem takes rate limit and time (in milliseconds) parameters (from `/config/initializers/rack-defense.rb`) and executes script with next Redis commands:
+
+```sh
+RPUSH key timestamp
+LPOP key
+PEXPIRE key time
 ```
 
 ## How to run it locally?
@@ -71,3 +71,16 @@ rails s
 ```sh
 http://localhost:3000
 ```
+
+## Deployment
+
+To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis instance information - REDIS_ENDPOINT_URI. You must pass it as environmental variable (in application.yml file or by server config, like `Heroku Config Variables`).
+
+### Google Cloud Run
+
+[![Run on Google
+Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby.git)
+
+### Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)

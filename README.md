@@ -1,14 +1,13 @@
 # Basic redis rate limiting demo Ruby
 
-The server will allow sending max 10 API requests within a 10 second window. If you send more than that, all additional requests will be blocked
+The server will allow sending particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
 
 ![How it works](./public/example.png)
 
 ## How it works
-This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (default: 10) per time (default: 10s).
-These values can be changed inside `/config/initializers/rack-defense.rb`.
+This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (`permitted_requests_count`, default: 10) per time (10 seconds).
 
-The application will return response headers after each successful request
+The application will return response headers after each successful request:
 
 ```sh
 # example
@@ -16,21 +15,30 @@ X-RateLimit-Limit: 10
 X-RateLimit-Remaining: 9
 ```
 
-The application will also return request header after each request (including blocking requests) with count of remain requests
+The application will also return request header after each request (including blocking requests) with count of remaining requests:
 
 ```sh
 # example
 RateLimit-Remaining: 1
 ```
 
-## Redis and commands
+### How the data is stored:
 
-Rack-defense gem takes rate limit and time (in milliseconds) parameters (from `/config/initializers/rack-defense.rb`) and executes script with next Redis commands:
+The `permitted_requests_count` is stored in Redis store in string format. By default, it's `10`. You can set new `VALUE` with these commands:
 
 ```sh
-RPUSH key timestamp
-LPOP key
-PEXPIRE key time
+ SET permitted_requests_count VALUE
+ INCR permitted_requests_count
+ DECR permitted_requests_count
+```
+
+#### IMPORTANT! For the new `permitted_requests_count` value to take effect you need to restart an app (rails) server after these commands.
+
+### How the data is accessed:
+
+You can get `permitted_requests_count` with this command:
+```sh
+ GET permitted_requests_count
 ```
 
 ## How to run it locally?
@@ -74,7 +82,7 @@ http://localhost:3000
 
 ## Deployment
 
-To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis instance information - REDIS_ENDPOINT_URI. You must pass it as environmental variable (in application.yml file or by server config, like `Heroku Config Variables`).
+To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis instance information - REDIS_ENDPOINT_URI. You must pass it as environmental variable (in `application.yml` file or by server config, like `Heroku Config Variables`).
 
 ### Google Cloud Run
 

@@ -16,7 +16,7 @@
     }
   ],
   "language": ["Ruby"],
-  "redis_commands": [],
+  "redis_commands": ["SET", "GET", "INCR", "DECR"],
   "redis_features": ["requests blocking"],
   "redis_modules": [],
   "app_image_urls": [

@@ -79,5 +79,5 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: basic-redis-rate-limiting-demo-ruby_production
 

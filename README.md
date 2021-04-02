@@ -58,7 +58,7 @@ You can get `permitted_requests_count` with this command:
 # copy files and set proper data inside
 cp config/application.yml.example config/application.yml
 
-- REDIS_ENDPOINT_URI: Redis server URI
+- REDIS_URL: Redis server URI
 
 cp config/database.yml.example config/database.yml
 ```

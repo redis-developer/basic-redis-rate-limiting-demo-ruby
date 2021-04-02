@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: basic-redis-rate-limiting-demo-ruby_development
-  #  username: <%#= ENV['POSTGRES_USERNAME_DEV'] %>
-  #  password: <%#= ENV['POSTGRES_PASSWORD_DEV'] %>
+  database: 'basic-redis-rate-limiting-demo-ruby_development'
+#  username: <%#= ENV['POSTGRES_USERNAME_DEV'] %>
+#  password: <%#= ENV['POSTGRES_PASSWORD_DEV'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -76,6 +76,8 @@ test:
 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # You can use this database configuration with:
-#
+
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  database: basic-redis-rate-limiting-demo-ruby_production
+

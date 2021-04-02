@@ -1,5 +1,5 @@
 Rack::Defense.setup do |config|
-  config.store = ENV['REDIS_ENDPOINT_URI']
+  config.store = ENV['REDIS_URL']
 
   permitted_requests_count = config.store.get('permitted_requests_count')
 

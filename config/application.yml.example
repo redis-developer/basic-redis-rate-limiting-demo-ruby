@@ -1,2 +1,2 @@
 # local example
-REDIS_ENDPOINT_URI: 'redis://localhost:6379'
+REDIS_URL: 'redis://localhost:6379'

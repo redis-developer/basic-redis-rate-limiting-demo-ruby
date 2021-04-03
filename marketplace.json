@@ -6,13 +6,10 @@
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby",
   "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/archive/main.zip",
   "hosted_url": "",
-  "quick_deploy": "false",
+  "quick_deploy": "true",
   "deploy_buttons": [
     {
       "heroku": "https://heroku.com/deploy?template=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby"
-    },
-    {
-      "Google": "https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby.git"
     }
   ],
   "language": ["Ruby"],

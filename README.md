@@ -57,7 +57,7 @@ You can get `permitted_requests_count` with this command:
 # copy files and set proper data inside
 cp config/application.yml.example config/application.yml
 
-- REDIS_ENDPOINT_URI: Redis server URI
+- REDIS_URL: Redis server URI
 ```
 
 ```sh
@@ -78,12 +78,7 @@ http://localhost:3000
 
 ## Deployment
 
-To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis instance information - REDIS_ENDPOINT_URI. You must pass it as environmental variable (in `application.yml` file or by server config, like `Heroku Config Variables`).
-
-### Google Cloud Run
-
-[![Run on Google
-Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby.git)
+To make deploys work, you need to create free account in https://redislabs.com/try-free/ and get Redis instance information - `REDIS_URL`. You must pass it as environmental variable (in `application.yml` file or by server config, like `Heroku Config Variables`).
 
 ### Heroku
 

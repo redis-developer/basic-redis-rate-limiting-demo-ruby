@@ -6,12 +6,8 @@
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["ruby", "ruby-on-rails", "redis"],
   "env": {
-    "REDIS_ENDPOINT_URI": {
+    "REDIS_URL": {
       "description": "Redis server url",
-      "required": true
-    },
-    "DATABASE_URL": {
-      "description": "Postgres database",
       "required": true
     }
   }

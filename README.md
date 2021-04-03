@@ -47,6 +47,7 @@ You can get `permitted_requests_count` with this command:
 
 - Ruby - v2.7.0
 - Rails - v5.2.4.5
+- PostgreSQL - v10.16
 - NPM - v7.6.0
 
 ### Local installation:
@@ -62,6 +63,7 @@ cp config/application.yml.example config/application.yml
 
 ```sh
 bundle install
+rails db:create
 ```
 
 #### Run the app

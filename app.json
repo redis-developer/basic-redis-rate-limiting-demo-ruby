@@ -9,10 +9,6 @@
     "REDIS_URL": {
       "description": "Redis server url",
       "required": true
-    },
-    "DATABASE_URL": {
-      "description": "Postgres database",
-      "required": true
     }
   }
 }

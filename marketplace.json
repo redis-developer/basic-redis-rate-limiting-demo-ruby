@@ -13,7 +13,7 @@
     }
   ],
   "language": ["Ruby"],
-  "redis_commands": ["SET", "GET", "INCR", "DECR"],
+  "redis_commands": [],
   "redis_features": ["Rate Limiting"],
   "redis_modules": [],
   "app_image_urls": [

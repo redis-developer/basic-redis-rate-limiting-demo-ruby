@@ -5,7 +5,30 @@ The server will allow sending particular number of requests (`permitted_requests
 ![How it works](./public/example.png)
 
 ## How it works
+
 This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (`permitted_requests_count`, default: 10) per time (10 seconds).
+
+##### Code to configure rack-defence
+
+```Ruby
+Rack::Defense.setup do |config|
+  config.store = ENV['REDIS_URL']
+
+  permitted_requests_count = config.store.get('permitted_requests_count')
+
+  if permitted_requests_count.present?
+    permitted_requests_count = permitted_requests_count.to_i
+  else
+    config.store.set('permitted_requests_count', 10)
+  end
+
+  # 10000 - time, ms
+  # || 10 - to avoid ArgumentError on first run
+  config.throttle('ping', permitted_requests_count || 10, 10000) do |req|
+    req.ip if req.path == '/ping' && req.get?
+  end
+end
+```
 
 The application will return response headers after each successful request:
 
@@ -37,6 +60,7 @@ The `permitted_requests_count` is stored in Redis store in string format. By def
 ### How the data is accessed:
 
 You can get `permitted_requests_count` with this command:
+
 ```sh
  GET permitted_requests_count
 ```

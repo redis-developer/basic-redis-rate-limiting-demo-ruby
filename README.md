@@ -107,3 +107,5 @@ To make deploys work, you need to create free account in https://redislabs.com/t
 ### Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+[![Deploy](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby)

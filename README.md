@@ -8,7 +8,7 @@ The server will allow sending particular number of requests (`permitted_requests
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](public/YTThumbnail.png)](https://www.youtube.com/watch?v=Fk1rVm-iaDo)
+[![Watch the video on YouTube](public/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
 
 ## How it works
 

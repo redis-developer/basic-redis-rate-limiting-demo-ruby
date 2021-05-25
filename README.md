@@ -4,6 +4,12 @@ The server will allow sending particular number of requests (`permitted_requests
 
 ![How it works](./public/example.png)
 
+# Overview video
+
+Here's a short video that explains the project and how it uses Redis:
+
+[![Watch the video on YouTube](public/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+
 ## How it works
 
 This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (`permitted_requests_count`, default: 10) per time (10 seconds).

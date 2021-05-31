@@ -20,7 +20,7 @@
   "redis_features": ["Rate Limiting"],
   "redis_modules": [],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/blob/main/public/example.png"
+    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/raw/main/public/example.png"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],

@@ -2,7 +2,7 @@
 
 The server will allow sending particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
 
-![How it works](./public/example.png)
+![How it works](https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/blob/main/public/example.png)
 
 # Overview video
 

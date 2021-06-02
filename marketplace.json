@@ -1,6 +1,6 @@
 {
-  "app_name": "Basic Redis Rate Limiting Demo Ruby",
-  "description": "Blocking requests with Redis on Ruby in Rails",
+  "app_name": "Rate Limiting Demo app using Ruby on Rails and Redis",
+  "description": "Rate Limiting Demo app using Ruby on Rails and Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby",
@@ -20,7 +20,7 @@
   "redis_features": ["Rate Limiting"],
   "redis_modules": [],
   "app_image_urls": [
-    "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/raw/main/public/example.png"
+    "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/main/public/example.png"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],

@@ -8,8 +8,6 @@ The server will allow sending particular number of requests (`permitted_requests
 - Backend: Redis
 
 
-![How it works](https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/raw/main/public/example.png)
-
 
 ## How it works
 

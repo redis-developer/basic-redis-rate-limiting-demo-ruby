@@ -1,5 +1,5 @@
 {
-  "app_name": "Rate Limiting Demo app using Ruby on Rails",
+  "app_name": "Rate Limiting Demo app in Ruby on Rails",
   "description": "Rate Limiting Demo app using Ruby on Rails and Redis",
   "type": "Building Block",
   "contributed_by": "Redis Labs",

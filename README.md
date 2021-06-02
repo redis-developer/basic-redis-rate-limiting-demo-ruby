@@ -1,4 +1,4 @@
-# Basic redis rate limiting demo Ruby
+# Rate Limiting Demo app using Ruby on Rails and Redis
 
 The server will allow sending particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
 
@@ -8,7 +8,7 @@ The server will allow sending particular number of requests (`permitted_requests
 
 Here's a short video that explains the project and how it uses Redis:
 
-[![Watch the video on YouTube](https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/raw/main/public/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
+[![Watch the video on YouTube](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/raw/main/public/YTThumbnail.png)](https://www.youtube.com/watch?v=_mFWjk7ONa8)
 
 ## How it works
 

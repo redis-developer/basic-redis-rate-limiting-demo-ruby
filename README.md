@@ -1,4 +1,4 @@
-# Rate Limiting Demo app using Ruby on Rails and Redis
+# Rate Limiting app using Ruby on Rails and Redis
 
 The server will allow sending particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
 

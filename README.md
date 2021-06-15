@@ -1,17 +1,17 @@
-# Rate Limiting app using Ruby on Rails and Redis
+# Rate limiting app using Ruby on Rails and Redis
 
-The server will allow sending particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
+The server lets you send a particular number of requests (`permitted_requests_count` stored in Redis) within a 10 second window. If you send more than that, all additional requests will be blocked.
 
 ## Technical Stack
 
 - Frontend: Ruby on Rails
 - Backend: Redis
 
-
-
 ## How it works
 
-This app was built using `rack-defense` gem which will block connections from a client after surpassing certain amount of requests (`permitted_requests_count`, default: 10) per time (10 seconds).
+This app was built using the `rack-defense` gem, which blocks connections from a client after surpassing certain number of requests (`permitted_requests_count`, default: 10) per time window (10 seconds).
+
+The `rack-defense` gem uses Redis as a back end.
 
 ##### Code to configure rack-defence
 
@@ -35,7 +35,7 @@ Rack::Defense.setup do |config|
 end
 ```
 
-The application will return response headers after each successful request:
+The application returns response headers after each successful request:
 
 ```sh
 # example
@@ -43,16 +43,16 @@ X-RateLimit-Limit: 10
 X-RateLimit-Remaining: 9
 ```
 
-The application will also return request header after each request (including blocking requests) with count of remaining requests:
+The application also returns a request header after each request (including blocking requests) showing the number of remaining requests:
 
 ```sh
-# example
+# Example response header
 RateLimit-Remaining: 1
 ```
 
 ### How the data is stored:
 
-The `permitted_requests_count` is stored in Redis store in string format. By default, it's `10`. You can set new `VALUE` with these commands:
+The `permitted_requests_count` is stored in a Redis string format. By default, the value is `10`. You can set a different value with these commands:
 
 ```sh
  SET permitted_requests_count VALUE
@@ -96,7 +96,7 @@ bundle install
 #### Run the app
 
 ```sh
-rails s
+bin/rails server
 ```
 
 #### Go to the browser with this link (localhost example)

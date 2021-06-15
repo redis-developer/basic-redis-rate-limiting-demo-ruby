@@ -1,2 +1,2 @@
-# local example
+# Redis server URL
 REDIS_URL: 'redis://localhost:6379'

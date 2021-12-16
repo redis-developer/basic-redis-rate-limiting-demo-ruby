@@ -5,6 +5,7 @@
   "repository": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby",
   "logo": "https://redis.io/images/redis-white.png",
   "keywords": ["ruby", "ruby-on-rails", "redis"],
+  "addons": ["rediscloud:30"],
   "env": {
     "REDIS_URL": {
       "description": "Redis server url",

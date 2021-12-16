@@ -9,7 +9,7 @@ The server lets you send a particular number of requests (`permitted_requests_co
 
 ## How it works
 
-@![My Image](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/master/app_preview_image.png)
+![My Image](https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/master/app_preview_image.png)
 
 This app was built using the `rack-defense` gem, which blocks connections from a client after surpassing certain number of requests (`permitted_requests_count`, default: 10) per time window (10 seconds).
 

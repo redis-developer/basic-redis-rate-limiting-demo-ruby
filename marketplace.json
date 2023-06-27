@@ -2,7 +2,7 @@
   "app_name": "Rate Limiting app in Ruby on Rails",
   "description": "Rate Limiting app using Ruby on Rails and Redis",
   "type": "Building Block",
-  "contributed_by": "Redis Labs",
+  "contributed_by": "Redis",
   "repo_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby",
   "preview_image_url": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/master/images/app_preview_image.png",
   "download_url": "https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby/archive/main.zip",
@@ -16,15 +16,26 @@
       "Google": "https://deploy.cloud.run?git_repo=https://github.com/redis-developer/basic-redis-rate-limiting-demo-ruby"
     }
   ],
-  "language": ["Ruby"],
-  "redis_commands": ["SET", "GET", "INCR", "DECR"],
-  "redis_features": ["Rate Limiting"],
-  "redis_modules": [],
+  "language": [
+    "Ruby"
+  ],
+  "redis_commands": [
+    "SET",
+    "GET",
+    "INCR",
+    "DECR"
+  ],
+  "redis_use_cases": [
+    "Rate Limiting"
+  ],
+  "redis_features": [],
   "app_image_urls": [
     "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/main/public/example.png"
   ],
   "youtube_url": "https://www.youtube.com/watch?v=_mFWjk7ONa8",
   "special_tags": [],
-  "verticals": ["Others"],
+  "verticals": [
+    "Others"
+  ],
   "markdown": "https://raw.githubusercontent.com/redis-developer/basic-redis-rate-limiting-demo-ruby/main/README.md"
 }
